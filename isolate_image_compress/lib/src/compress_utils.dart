@@ -3,7 +3,7 @@ import 'dart:typed_data';
 import 'package:image/image.dart';
 import 'package:isolate_flutter/isolate_flutter.dart';
 
-import 'package:isolate_image_compress/src/constants/enums.dart';
+import 'package:isolate_image_compress/src/constants/enums.dart' hide ImageFormat;
 import 'package:isolate_image_compress/src/entity/isolate_image.dart';
 import 'package:isolate_image_compress/src/compress_format/index.dart';
 
@@ -74,7 +74,7 @@ Future<Uint8List> _compressImage(CompressParams params) async {
 
 Decoder? _getDecoder(ImageFormat format) {
   switch (format) {
-    case ImageFormat.jpeg:
+    case ImageFormat.jpg:
       return JpegDecoder();
     case ImageFormat.png:
       return PngDecoder();
